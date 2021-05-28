@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmilingMinds</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+<body>
+    <section id="main">
+        <nav>
+            <ul>
+                <li><a href="#login">Login/Register</a></li>
+                <li><a href="#language">Language</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#main">Home</a></li>
+            </ul> 
+        </nav>
+        <img src="img/Black and Brown Hipster LGBT Collage Social Media Graphics.png">
+    <div class="intro">
+        <h1>Discover the power of community!</h1>
+        <p>We are glad to have you here! Smiling Minds is a platform that connects language learners and native speakers to make learning more fun!</p>
+        <button class="start"><a href="#language">Get Started</a></button> 
+    </div>
+    </section>
+
+    <section id="about">
+        <h1>About</h1>
+        <p> In times of hardship, uncertainty and fear, community is more important than ever. We rely on those around us for solidarity,
+            support, guidance, information and empathy. One of the greatest challenges of the COVID-19 epidemic is that to slow the 
+            spread of the virus we must practice social distancing and forgo in-person community. But there is a reason for optimism: 
+            community and social distancing are not incompatible. Thanks to the internet, we can maintain and grow the bonds of 
+            community among us even while physically quarantined and isolated. At Smiling Minds, online community is central to our mission
+             and vision.<br><br> 
+            Join us in making learning more fun! We connect enthusiastic language learners like you to native speakers to bring about a feeling of togetherness and belonging;
+            promoting diversity and inclusivity along the way! </p>
+    </section>
+
+    <section id="language">
+        <div class="container">
+            <h1>Language</h1>
+           
+            <div class="select-box">
+               
+                <div class="options-container">
+                   
+                    <div class="option">
+                        <input type="radio" class="radio" id="english" name="language"/>
+                        <label for="english">English</label> 
+                    </div>
+
+                    <div class="option">
+                        <input type="radio" class="radio" id="hindi" name="language"/>
+                        <label for="hindi">Hindi</label> 
+                    </div>
+
+                    <div class="option">
+                        <input type="radio" class="radio" id="spanish" name="language"/>
+                        <label for="spanish">Spanish</label> 
+                    </div>
+                </div>
+
+                <div class="selected">
+                    Choose your language
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="login">
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <form id="login" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="text" class="input-field" placeholder="Password" required>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+
+                <form id="register" class="input-group">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="email" class="input-field" placeholder="Email Id" required>
+                    <input type="text" class="input-field" placeholder="Password" required>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+
+    <script>
+       const selected = document.querySelector(".selected");
+const optionsContainer = document.querySelector(".options-container");
+
+const optionsList = document.querySelectorAll(".option");
+
+selected.addEventListener("click", () => {
+  optionsContainer.classList.toggle("active");
+});
+
+optionsList.forEach(o => {
+  o.addEventListener("click", () => {
+    selected.innerHTML = o.querySelector("label").innerHTML;
+    optionsContainer.classList.remove("active");
+  });
+});
+
+
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function login(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+        
+        function register(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+    </script>
+</body>
+</html>
